@@ -52,9 +52,17 @@ A client brief becomes a multi-page website: an editable page plan, then each pa
 - **Client review links**: Client approves or requests changes without an account.
 - **Workspaces with owner, editor, client and viewer roles**: Client role edits texts and images only.
 
+## How it works
+
+A technical case study of the architecture, one end-to-end flow, the key engineering decisions and how you would build something like this: **[docs/HOW-IT-WORKS.md](docs/HOW-IT-WORKS.md)**.
+
 ## A look at the code
 
-**Server-side request forgery guard**: [`snippets/ssrf-guard.ts`](snippets/ssrf-guard.ts). Decides whether an address is private, loopback, link-local or tunnelled in any IPv4 or IPv6 spelling, and refuses such addresses before a site is imported from a URL. It keeps the builder from being used to reach an internal network.
+Real excerpts from the source, shown for illustration:
+
+- **SSRF guard for "Rebuild from a website URL"** ([`snippets/ssrf-guard.ts`](snippets/ssrf-guard.ts)): Recognises private, loopback, link-local, NAT64 and 6to4 addresses in every IPv4 and IPv6 spelling, so the server can never be tricked into reading an internal network.
+- **Sandboxed preview of generated sites** ([`snippets/sandboxed-preview-csp.ts`](snippets/sandboxed-preview-csp.ts)): A generated site is served on the builder's own address inside a sandbox with a strict Content-Security-Policy, so the page is an opaque origin that cannot read the builder's cookies or call its API; only the builder's own script runs, pinned by hash.
+- **SEO and quality checklist** ([`snippets/site-quality-checks.ts`](snippets/site-quality-checks.ts)): Every check is something the site owner can fix, from title and description length to missing alt text, untranslated sections and leftover "[Client name]" placeholders. The score is simply the share of checks that pass.
 
 ## Requirements (full version)
 

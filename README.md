@@ -8,6 +8,8 @@
   <b>White-label AI website builder for agencies (Node.js).</b>
 </p>
 
+<p align="center"><sub>AI website builder source code · white-label SaaS for agencies · brief to website · self-hosted</sub></p>
+
 <p align="center">
   <a href="https://kiln-demo.mikodes.com/"><b>▶ Live demo</b></a> ·
   <a href="https://store.mikodes.com/p/kiln/"><b>Get the full source code</b></a>
@@ -73,6 +75,20 @@ Real excerpts from the source, shown for illustration:
 - Optional: own Stripe, Cloudflare, Resend and Pexels accounts
 
 Not included: Hosting, server, domain and TLS certificates; AI provider usage; Stripe fees; Cloudflare plan limits above the free tier; Resend plan.
+
+## FAQ
+
+**Is this the full source code?**  
+No. This repository is a showcase with screenshots, a technical case study and real code excerpts. The complete Kiln source code is sold at [store.mikodes.com/p/kiln](https://store.mikodes.com/p/kiln/).
+
+**What is Kiln built with?**  
+Vite.
+
+**Can I try it before buying?**  
+Yes, open the [live demo](https://kiln-demo.mikodes.com/).
+
+**Do I get help with the installation?**  
+Free setup help is included with the store purchase; questions go to [mikodes.com/support](https://mikodes.com/support).
 
 ## Get the full source code
 
